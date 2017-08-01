@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  itunes
 //
-//  Created by Bamby on 31/7/17.
+//  Created by Juan S. Landy  on 31/7/17.
 //
 //
 
