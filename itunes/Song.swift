@@ -48,7 +48,7 @@ public struct Song{
     public func dateFormat(stringDate:String)->String{
         let myFormatter = DateFormatter()
         myFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let date = myFormatter.date(from: "1982-11-30T08:00:00Z")
+        let date = myFormatter.date(from: stringDate)
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date!)
         let month = calendar.component(.month, from: date!)
