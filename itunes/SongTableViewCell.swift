@@ -20,6 +20,21 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var labelGenre: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var song: Song? {
+        didSet {
+            guard let song = song else { return }
+            
+            labelSongName.text = song.trackName
+            labelArtistName.text = song.artist
+            labelAlbumName.text = song.album
+            labelPrice.text = "$\(String(song.price))"
+            labelDuration.text = song.milisecondsToSeconds(miliseconds: song.duration)
+            labelGenre.text = song.genre
+        }
+    }
+    
+  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,7 +47,6 @@ class SongTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

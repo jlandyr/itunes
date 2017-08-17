@@ -82,14 +82,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath) as! SongTableViewCell
         let theSong = self.arraySongs[indexPath.row]
-        cell.labelSongName.text = theSong.trackName
-        cell.labelArtistName.text = theSong.artist
-        cell.labelGenre.text = theSong.genre
-        cell.labelPrice.text = "$\(String(theSong.price))"
-        
-        cell.labelDuration.text = theSong.milisecondsToSeconds(miliseconds: theSong.duration)
-        cell.labelAlbumName.text = "\(theSong.album), \(theSong.dateFormat(stringDate: theSong.releaseDate))"
-        
+        cell.song = theSong
         
         if (self.cache.object(forKey: theSong.artwork as AnyObject) != nil){
             //Cached image used, no need to download it
